@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Creators — African Story Village</title>
+<meta name="description" content="Future opportunities at African Story Village for writers, illustrators, narrators, educators and editors. Submit your interest.">
+<link rel="canonical" href="https://www.africanstoryvillage.com/creators.html">
+<link rel="icon" href="images/logo-placeholder.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="creators">
+<a href="#main" class="skip-link">Skip to content</a>
+<div data-include="header"></div>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Creators</span>
+      <h1>Help build the next chapter of the village.</h1>
+      <p>African Story Village is growing, and future opportunities will open for creative collaborators. Submitting your interest does not guarantee publication or employment — it simply puts you on our radar for future opportunities.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="grid-3">
+        <div class="card value-card"><h4>Writers</h4><p class="card-desc">Story ideas across our existing series, or entirely new worlds.</p></div>
+        <div class="card value-card"><h4>Illustrators</h4><p class="card-desc">Character design, book covers and activity artwork.</p></div>
+        <div class="card value-card"><h4>Narrators</h4><p class="card-desc">Voice talent for our growing audio story library.</p></div>
+        <div class="card value-card"><h4>Educators</h4><p class="card-desc">Curriculum thinking behind our activities and school programmes.</p></div>
+        <div class="card value-card"><h4>Editors</h4><p class="card-desc">Manuscript editing with an eye for tone, age-fit and pacing.</p></div>
+        <div class="card value-card"><h4>Story Contributors</h4><p class="card-desc">Folklore, family stories and cultural knowledge worth passing on.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container" style="max-width:760px;">
+      <div class="section-head">
+        <div class="section-copy">
+          <span class="eyebrow">Submit your interest</span>
+          <h2>Tell us what you make</h2>
+        </div>
+      </div>
+      <form id="creator-form" class="stack" novalidate>
+        <div class="form-grid cols-2">
+          <div class="field">
+            <label for="cr-name">Your name <span class="req">*</span></label>
+            <input type="text" id="cr-name" name="name" required>
+            <span class="field-error">Please enter your name.</span>
+          </div>
+          <div class="field">
+            <label for="cr-email">Email <span class="req">*</span></label>
+            <input type="email" id="cr-email" name="email" required>
+            <span class="field-error">Please enter a valid email.</span>
+          </div>
+          <div class="field">
+            <label for="cr-role">I am a...</label>
+            <select id="cr-role" name="role">
+              <option>Writer</option>
+              <option>Illustrator</option>
+              <option>Narrator</option>
+              <option>Educator</option>
+              <option>Editor</option>
+              <option>Story Contributor</option>
+              <option>Other</option>
+            </select>
+          </div>
+          <div class="field">
+            <label for="cr-portfolio">Portfolio or sample link</label>
+            <input type="url" id="cr-portfolio" name="portfolio" placeholder="https://">
+          </div>
+        </div>
+        <div class="field">
+          <label for="cr-message">Tell us about your work <span class="req">*</span></label>
+          <textarea id="cr-message" name="message" required></textarea>
+          <span class="field-error">Please tell us a little about your work.</span>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Interest</button>
+        <p class="form-status" data-form-status role="status"></p>
+        <p class="form-note">This form is not yet connected to a live backend. See js/forms.js for the integration point.</p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<div data-include="footer"></div>
+
+<script src="js/data.js" defer></script>
+<script src="js/carousel.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/stories.js" defer></script>
+<script src="js/audio.js" defer></script>
+<script src="js/search.js" defer></script>
+<script src="js/forms.js" defer></script>
+</body>
+</html>

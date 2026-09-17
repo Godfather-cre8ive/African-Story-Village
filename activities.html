@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Activity Village — African Story Village</title>
+<meta name="description" content="Observation challenges, vocabulary games, drawing prompts and printable resources — free educational activities tied to African Story Village stories.">
+<link rel="canonical" href="https://www.africanstoryvillage.com/activities.html">
+<link rel="icon" href="images/logo-placeholder.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="activities">
+<a href="#main" class="skip-link">Skip to content</a>
+<div data-include="header"></div>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Activity village</span>
+      <h1>Learning that feels like play.</h1>
+      <p>Every activity is tied to a story, and every download is free to print at home or in the classroom.</p>
+    </div>
+  </section>
+
+  <section class="section-forest">
+    <div class="container grid-2" style="align-items:center;">
+      <div>
+        <span class="eyebrow" style="background:rgba(255,255,255,0.15);color:#fff;">Featured challenge</span>
+        <h2>The Observation Challenge</h2>
+        <p>Inspired by Lara's own methods in The Musical Forest Adventures, this printable challenge asks children to sketch, describe and compare — the same three steps Lara uses to solve every mystery.</p>
+        <a class="btn btn-gold" href="downloads/observation-journal.pdf" download>Download the challenge</a>
+      </div>
+      <img src="https://images.unsplash.com/photo-1516414447565-b14be0adf13e?q=80&w=1000&auto=format&fit=crop" alt="A child's observation journal with sketches and notes" loading="lazy" style="border-radius:var(--radius-lg);box-shadow:var(--shadow-lg);width:100%;aspect-ratio:4/3;object-fit:cover;">
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-head">
+        <div class="section-copy">
+          <span class="eyebrow">Browse by category</span>
+          <h2>Every kind of hands-on learning</h2>
+        </div>
+      </div>
+      <div class="chip-row" id="activity-chip-row" role="group" aria-label="Filter activities by category">
+        <button class="chip" aria-pressed="true" data-cat="">All</button>
+      </div>
+      <div id="activity-groups" style="margin-top:var(--space-lg);"></div>
+    </div>
+  </section>
+</main>
+
+<div data-include="footer"></div>
+
+<script src="js/data.js" defer></script>
+<script src="js/carousel.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/stories.js" defer></script>
+<script src="js/audio.js" defer></script>
+<script src="js/search.js" defer></script>
+<script src="js/forms.js" defer></script>
+<script defer>
+document.addEventListener('asv:includesReady', function () {
+  var chipRow = document.getElementById('activity-chip-row');
+  var groupsWrap = document.getElementById('activity-groups');
+  var categories = ASV_DATA.activityCategories;
+
+  categories.forEach(function (cat) {
+    var chip = document.createElement('button');
+    chip.className = 'chip';
+    chip.setAttribute('aria-pressed', 'false');
+    chip.setAttribute('data-cat', cat);
+    chip.textContent = cat;
+    chipRow.appendChild(chip);
+  });
+
+  function render(activeCat) {
+    chipRow.querySelectorAll('.chip').forEach(function (c) {
+      c.setAttribute('aria-pressed', String(c.getAttribute('data-cat') === activeCat));
+    });
+
+    var list = activeCat
+      ? ASV_DATA.activities.filter(function (a) { return a.category === activeCat; })
+      : ASV_DATA.activities;
+
+    groupsWrap.innerHTML = '';
+    if (!activeCat) {
+      categories.forEach(function (cat) {
+        var items = ASV_DATA.activities.filter(function (a) { return a.category === cat; });
+        if (!items.length) return;
+        groupsWrap.appendChild(buildCarousel(cat, items));
+      });
+    } else {
+      groupsWrap.appendChild(buildCarousel(activeCat, list));
+    }
+    ASVCarousel.init(groupsWrap);
+  }
+
+  function buildCarousel(title, items) {
+    var section = document.createElement('div');
+    section.innerHTML =
+      '<div class="section-head"><div><h3>' + ASVRender.esc(title) + '</h3></div></div>' +
+      '<div class="content-carousel" data-carousel>' +
+        '<div class="carousel-controls">' +
+          '<button class="carousel-btn carousel-prev" aria-label="Previous"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-5-5 5-5"/></svg></button>' +
+          '<button class="carousel-btn carousel-next" aria-label="Next"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 15l5-5-5-5"/></svg></button>' +
+        '</div>' +
+        '<div class="carousel-viewport"><div class="carousel-track" role="list" tabindex="0">' +
+          items.map(ASVRender.activityCard).join('') +
+        '</div></div>' +
+      '</div>';
+    return section;
+  }
+
+  chipRow.addEventListener('click', function (e) {
+    var btn = e.target.closest('.chip');
+    if (!btn) return;
+    render(btn.getAttribute('data-cat'));
+  });
+
+  render('');
+});
+</script>
+</body>
+</html>

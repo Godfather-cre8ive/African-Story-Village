@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story Library — African Story Village</title>
+<meta name="description" content="Browse every African Story Village series — The Musical Forest Adventures, Tales by Moonlight and Kingdom Stories — filtered by age and learning focus.">
+<link rel="canonical" href="https://www.africanstoryvillage.com/stories.html">
+<meta property="og:title" content="Story Library — African Story Village">
+<meta property="og:description" content="Browse every African Story Village series, filtered by age and learning focus.">
+<link rel="icon" href="images/logo-placeholder.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="stories">
+<a href="#main" class="skip-link">Skip to content</a>
+<div data-include="header"></div>
+
+<main id="main" data-page-stories>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Story library</span>
+      <h1>Find the next story your child can't put down.</h1>
+      <p>Filter by series, age or learning focus, or search by title.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="filter-bar" role="search">
+        <div class="filter-group">
+          <label for="filter-series">Series</label>
+          <select id="filter-series">
+            <option value="">All series</option>
+            <option value="musical-forest">Musical Forest Adventures</option>
+            <option value="moonlight">Tales by Moonlight</option>
+            <option value="kingdom">Kingdom Stories</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-age">Age</label>
+          <select id="filter-age">
+            <option value="">All ages</option>
+            <option value="3-5">3–5</option>
+            <option value="6-8">6–8</option>
+            <option value="9-12">9–12</option>
+            <option value="13-14">13–14</option>
+          </select>
+        </div>
+        <div class="filter-group">
+          <label for="filter-focus">Learning focus</label>
+          <select id="filter-focus">
+            <option value="">All focus areas</option>
+            <option value="Observation">Observation</option>
+            <option value="Creativity">Creativity</option>
+            <option value="Vocabulary">Vocabulary</option>
+            <option value="Character">Character</option>
+            <option value="Faith">Faith</option>
+            <option value="Cultural Appreciation">Culture</option>
+            <option value="Problem Solving">Problem Solving</option>
+          </select>
+        </div>
+        <div class="filter-group filter-search">
+          <label for="filter-search">Search</label>
+          <input type="search" id="filter-search" placeholder="Search by title or keyword">
+        </div>
+      </div>
+
+      <div id="story-results"></div>
+      <p id="story-empty" class="empty-state" style="display:none;">No stories match those filters yet. Try clearing a filter or searching a different word.</p>
+    </div>
+  </section>
+</main>
+
+<div data-include="footer"></div>
+
+<script src="js/data.js" defer></script>
+<script src="js/carousel.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/stories.js" defer></script>
+<script src="js/audio.js" defer></script>
+<script src="js/search.js" defer></script>
+<script src="js/forms.js" defer></script>
+</body>
+</html>

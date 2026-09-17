@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Story — African Story Village</title>
+<meta name="description" content="Read about this African Story Village title: age range, learning focus, moral themes, and how to buy, listen or download activities.">
+<link rel="canonical" href="https://www.africanstoryvillage.com/story.html">
+<link rel="icon" href="images/logo-placeholder.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="stories">
+<a href="#main" class="skip-link">Skip to content</a>
+<div data-include="header"></div>
+
+<main id="main" data-page-story-detail>
+  <section class="page-hero">
+    <div class="container">
+      <p class="breadcrumbs"><a href="index.html">Home</a> / <a href="stories.html">Stories</a> / <span data-story-title>Story</span></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="detail-hero">
+        <div class="detail-cover">
+          <img data-story-cover src="" alt="">
+        </div>
+        <div>
+          <a class="badge" data-story-series href="stories.html">Series</a>
+          <h1 data-story-title style="margin-top:0.4em;">Story title</h1>
+          <div class="detail-meta-row">
+            <span class="tag" data-story-age>Ages</span>
+            <span class="tag" data-story-time>Reading time</span>
+          </div>
+          <p><strong>Author:</strong> <span data-story-author></span> &nbsp;·&nbsp; <strong>Illustrator:</strong> <span data-story-illustrator></span></p>
+          <p data-story-description>Story description.</p>
+          <div class="tag-row" data-story-themes></div>
+          <div class="detail-actions">
+            <a class="btn btn-gold" data-story-amazon href="#" target="_blank" rel="noopener">Buy on Amazon</a>
+            <a class="btn btn-outline" href="#sample">Read a sample</a>
+            <a class="btn btn-outline" data-story-listen href="listen.html">Listen to this story</a>
+            <a class="btn btn-outline" data-story-activity href="#">Download activity</a>
+          </div>
+          <!-- Buy on Amazon link is a placeholder ("#") until a live KDP/store link is added; see README. -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-alt" id="sample">
+    <div class="container grid-2">
+      <div>
+        <h2>What children will discover</h2>
+        <ul data-story-discover></ul>
+      </div>
+      <div>
+        <h2>Inside this story</h2>
+        <ul data-story-inside></ul>
+      </div>
+    </div>
+  </section>
+
+  <section data-story-related-activities>
+    <div class="container">
+      <div class="section-head">
+        <div class="section-copy">
+          <span class="eyebrow">Activities for this story</span>
+          <h2>Learn a little more, hands-on</h2>
+        </div>
+        <a class="btn btn-outline btn-sm" href="activities.html">All activities</a>
+      </div>
+      <div class="content-carousel" data-carousel>
+        <div class="carousel-controls">
+          <button class="carousel-btn carousel-prev" aria-label="Previous"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-5-5 5-5"/></svg></button>
+          <button class="carousel-btn carousel-next" aria-label="Next"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 15l5-5-5-5"/></svg></button>
+        </div>
+        <div class="carousel-viewport"><div class="carousel-track" role="list" tabindex="0"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section-sunken" data-story-more-series>
+    <div class="container">
+      <div class="section-head">
+        <div class="section-copy">
+          <span class="eyebrow">More from this series</span>
+          <h2>Keep the adventure going</h2>
+        </div>
+      </div>
+      <div class="content-carousel" data-carousel>
+        <div class="carousel-controls">
+          <button class="carousel-btn carousel-prev" aria-label="Previous"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-5-5 5-5"/></svg></button>
+          <button class="carousel-btn carousel-next" aria-label="Next"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 15l5-5-5-5"/></svg></button>
+        </div>
+        <div class="carousel-viewport"><div class="carousel-track" role="list" tabindex="0"></div></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div data-include="footer"></div>
+
+<script src="js/data.js" defer></script>
+<script src="js/carousel.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/stories.js" defer></script>
+<script src="js/audio.js" defer></script>
+<script src="js/search.js" defer></script>
+<script src="js/forms.js" defer></script>
+</body>
+</html>

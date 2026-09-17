@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — African Story Village</title>
+<meta name="description" content="Get in touch with African Story Village for general questions, school enquiries, creator submissions, or partnership opportunities.">
+<link rel="canonical" href="https://www.africanstoryvillage.com/contact.html">
+<link rel="icon" href="images/logo-placeholder.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="contact">
+<a href="#main" class="skip-link">Skip to content</a>
+<div data-include="header"></div>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Contact</span>
+      <h1>Say hello to the village.</h1>
+      <p>General questions, school enquiries, creator submissions or partnership ideas — this one form covers all of it.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" style="max-width:820px;">
+      <form id="contact-form" class="stack" novalidate>
+        <div class="form-grid cols-2">
+          <div class="field">
+            <label for="ct-name">Name <span class="req">*</span></label>
+            <input type="text" id="ct-name" name="name" required>
+            <span class="field-error">Please enter your name.</span>
+          </div>
+          <div class="field">
+            <label for="ct-email">Email <span class="req">*</span></label>
+            <input type="email" id="ct-email" name="email" required>
+            <span class="field-error">Please enter a valid email.</span>
+          </div>
+          <div class="field">
+            <label for="ct-phone">Phone (optional)</label>
+            <input type="tel" id="ct-phone" name="phone">
+          </div>
+          <div class="field">
+            <label for="ct-org">Organisation (optional)</label>
+            <input type="text" id="ct-org" name="organisation">
+          </div>
+          <div class="field">
+            <label for="contact-type">Enquiry type <span class="req">*</span></label>
+            <select id="contact-type" name="enquiryType" required>
+              <option value="">Choose one...</option>
+              <option value="general">General question</option>
+              <option value="school">School / library enquiry</option>
+              <option value="creator">Creator submission</option>
+              <option value="partnership">Partnership opportunity</option>
+            </select>
+            <span class="field-error">Please choose an enquiry type.</span>
+          </div>
+          <div class="field">
+            <label for="ct-subject">Subject <span class="req">*</span></label>
+            <input type="text" id="ct-subject" name="subject" required>
+            <span class="field-error">Please enter a subject.</span>
+          </div>
+        </div>
+        <div class="field">
+          <label for="ct-message">Message <span class="req">*</span></label>
+          <textarea id="ct-message" name="message" required></textarea>
+          <span class="field-error">Please enter a message.</span>
+        </div>
+        <button type="submit" class="btn btn-primary">Send Message</button>
+        <p class="form-status" data-form-status role="status"></p>
+        <p class="form-note">This form is not yet connected to a live backend. See js/forms.js for the integration point.</p>
+      </form>
+    </div>
+  </section>
+
+  <div data-include="newsletter"></div>
+</main>
+
+<div data-include="footer"></div>
+
+<script src="js/data.js" defer></script>
+<script src="js/carousel.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/stories.js" defer></script>
+<script src="js/audio.js" defer></script>
+<script src="js/search.js" defer></script>
+<script src="js/forms.js" defer></script>
+</body>
+</html>

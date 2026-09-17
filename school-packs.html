@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>School Packs — African Story Village</title>
+<meta name="description" content="Sample school and library book packs from African Story Village — Starter, Classroom, Library Village and Custom packs.">
+<link rel="canonical" href="https://www.africanstoryvillage.com/school-packs.html">
+<link rel="icon" href="images/logo-placeholder.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="schools">
+<a href="#main" class="skip-link">Skip to content</a>
+<div data-include="header"></div>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <p class="breadcrumbs"><a href="index.html">Home</a> / <a href="schools.html">Schools</a> / School Packs</p>
+      <span class="eyebrow">School packs</span>
+      <h1>Ready-made book bundles for classrooms and libraries.</h1>
+      <p>Every pack below is a sample starting point — all quantities and inclusions are easy to customise. Prices are placeholders pending your quote.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="grid-4" id="pack-grid"></div>
+    </div>
+  </section>
+
+  <section class="section-alt">
+    <div class="container text-center">
+      <h2>Not sure which pack fits your school?</h2>
+      <p style="margin-inline:auto;">Tell us your age groups and class sizes, and we'll suggest a starting pack.</p>
+      <a class="btn btn-primary" href="contact.html?type=school">Request a Recommendation</a>
+    </div>
+  </section>
+</main>
+
+<div data-include="footer"></div>
+
+<script src="js/data.js" defer></script>
+<script src="js/carousel.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/stories.js" defer></script>
+<script src="js/audio.js" defer></script>
+<script src="js/search.js" defer></script>
+<script src="js/forms.js" defer></script>
+<script defer>
+document.addEventListener('asv:includesReady', function () {
+  var grid = document.getElementById('pack-grid');
+  grid.innerHTML = ASV_DATA.schoolPacks.map(function (pack) {
+    return '<article class="card pack-card" style="padding:var(--space-lg);">' +
+      '<h3>' + ASVRender.esc(pack.name) + '</h3>' +
+      '<p class="pack-price">' + ASVRender.esc(pack.price) + '</p>' +
+      (pack.books ? '<p class="card-meta">' + pack.books + ' books included</p>' : '') +
+      '<ul class="pack-list">' + pack.includes.map(function (item) {
+        return '<li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>' + ASVRender.esc(item) + '</li>';
+      }).join('') + '</ul>' +
+      '<a class="btn btn-outline btn-block" href="contact.html?type=school">' + ASVRender.esc(pack.cta) + '</a>' +
+      '</article>';
+  }).join('');
+});
+</script>
+</body>
+</html>

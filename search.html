@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Search — African Story Village</title>
+<meta name="description" content="Search African Story Village stories, activities, audio and journal articles.">
+<link rel="canonical" href="https://www.africanstoryvillage.com/search.html">
+<link rel="icon" href="images/logo-placeholder.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="search">
+<a href="#main" class="skip-link">Skip to content</a>
+<div data-include="header"></div>
+
+<main id="main" data-page-search>
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Search the village</span>
+      <h1>What are you looking for?</h1>
+      <form id="site-search-form" role="search">
+        <div class="field" style="max-width:520px;">
+          <label for="site-search-input" class="visually-hidden">Search stories, activities, audio and journal articles</label>
+          <input type="search" id="site-search-input" placeholder="Search stories, activities, audio, journal...">
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <p id="search-result-count" class="card-meta"></p>
+      <div id="search-results"></div>
+      <p id="search-empty-state" class="empty-state"></p>
+    </div>
+  </section>
+</main>
+
+<div data-include="footer"></div>
+
+<script src="js/data.js" defer></script>
+<script src="js/carousel.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/stories.js" defer></script>
+<script src="js/audio.js" defer></script>
+<script src="js/search.js" defer></script>
+<script src="js/forms.js" defer></script>
+</body>
+</html>

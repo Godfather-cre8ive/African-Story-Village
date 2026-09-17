@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Village Journal — African Story Village</title>
+<meta name="description" content="Notes on reading, storytelling, parenting, African culture and behind-the-scenes thinking from African Story Village.">
+<link rel="canonical" href="https://www.africanstoryvillage.com/journal.html">
+<link rel="icon" href="images/logo-placeholder.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="journal">
+<a href="#main" class="skip-link">Skip to content</a>
+<div data-include="header"></div>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">The village journal</span>
+      <h1>Notes on reading, culture and childhood.</h1>
+    </div>
+  </section>
+
+  <section>
+    <div class="container" id="journal-groups"></div>
+  </section>
+</main>
+
+<div data-include="footer"></div>
+
+<script src="js/data.js" defer></script>
+<script src="js/carousel.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/stories.js" defer></script>
+<script src="js/audio.js" defer></script>
+<script src="js/search.js" defer></script>
+<script src="js/forms.js" defer></script>
+<script defer>
+document.addEventListener('asv:includesReady', function () {
+  var wrap = document.getElementById('journal-groups');
+  var categories = Array.from(new Set(ASV_DATA.journalPosts.map(function (p) { return p.category; })));
+
+  wrap.innerHTML = categories.map(function (cat) {
+    var posts = ASV_DATA.journalPosts.filter(function (p) { return p.category === cat; });
+    return '<div class="section-head"><div><h3>' + ASVRender.esc(cat) + '</h3></div></div>' +
+      '<div class="content-carousel" data-carousel style="margin-bottom:var(--space-xl);">' +
+        '<div class="carousel-controls">' +
+          '<button class="carousel-btn carousel-prev" aria-label="Previous"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 15l-5-5 5-5"/></svg></button>' +
+          '<button class="carousel-btn carousel-next" aria-label="Next"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2"><path d="M8 15l5-5-5-5"/></svg></button>' +
+        '</div>' +
+        '<div class="carousel-viewport"><div class="carousel-track" role="list" tabindex="0">' +
+          posts.map(ASVRender.journalCard).join('') +
+        '</div></div>' +
+      '</div>';
+  }).join('');
+
+  ASVCarousel.init(wrap);
+});
+</script>
+</body>
+</html>

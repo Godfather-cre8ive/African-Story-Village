@@ -1,0 +1,39 @@
+<!-- ==========================================================================
+     NEWSLETTER COMPONENT
+     Loaded into pages that include <div data-include="newsletter"></div>.
+     Validation + fake-submit handling lives in js/forms.js (form id: newsletter-form).
+     ========================================================================== -->
+<section id="newsletter" class="section-sunken">
+  <div class="container">
+    <div class="newsletter-card corner-motif grid-2">
+      <div>
+        <span class="eyebrow">Stay close to the village</span>
+        <h2>Join the Village</h2>
+        <p>Subscribers get new stories, free printable activities, book release news, reading tips for home and classroom, and occasional village updates. No spam, ever.</p>
+      </div>
+      <div>
+        <form id="newsletter-form" class="stack" novalidate>
+          <div class="form-grid cols-2">
+            <div class="field">
+              <label for="nl-first-name">First name <span class="req">*</span></label>
+              <input type="text" id="nl-first-name" name="firstName" required autocomplete="given-name">
+              <span class="field-error">Please enter your first name.</span>
+            </div>
+            <div class="field">
+              <label for="nl-email">Email <span class="req">*</span></label>
+              <input type="email" id="nl-email" name="email" required autocomplete="email">
+              <span class="field-error">Please enter a valid email address.</span>
+            </div>
+          </div>
+          <div class="checkbox-field">
+            <input type="checkbox" id="nl-adult" name="isAdult" required>
+            <label for="nl-adult">I am a parent, teacher, or other adult signing up on behalf of my family or school. <span class="req">*</span></label>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Join the Village</button>
+          <p class="form-status" data-form-status role="status"></p>
+          <p class="form-note">This form is not yet connected to a live email service. See js/forms.js for the integration point.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

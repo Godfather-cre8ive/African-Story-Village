@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Listen — African Story Village</title>
+<meta name="description" content="Listen to African Story Village audio stories — perfect for bedtime, car rides and quiet afternoons.">
+<link rel="canonical" href="https://www.africanstoryvillage.com/listen.html">
+<link rel="icon" href="images/logo-placeholder.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/components.css">
+<link rel="stylesheet" href="css/responsive.css">
+</head>
+<body data-page="listen">
+<a href="#main" class="skip-link">Skip to content</a>
+<div data-include="header"></div>
+
+<main id="main">
+  <section class="page-hero">
+    <div class="container">
+      <span class="eyebrow">Listen</span>
+      <h1>Stories you can press play on.</h1>
+      <p>Every audio story is available on its own — no autoplay, and starting one automatically pauses any other that's playing.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="grid-3" id="audio-grid" role="list"></div>
+    </div>
+  </section>
+</main>
+
+<div data-include="footer"></div>
+
+<script src="js/data.js" defer></script>
+<script src="js/carousel.js" defer></script>
+<script src="js/main.js" defer></script>
+<script src="js/stories.js" defer></script>
+<script src="js/audio.js" defer></script>
+<script src="js/search.js" defer></script>
+<script src="js/forms.js" defer></script>
+<script defer>
+document.addEventListener('asv:includesReady', function () {
+  var grid = document.getElementById('audio-grid');
+  grid.innerHTML = ASV_DATA.audioStories.map(audioCard).join('');
+  initAudioCoordination(grid);
+
+  var params = new URLSearchParams(window.location.search);
+  var slug = params.get('slug');
+  if (slug) {
+    var idx = ASV_DATA.audioStories.findIndex(function (a) { return a.storySlug === slug; });
+    var card = grid.children[idx];
+    if (card) {
+      card.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      card.style.outline = '3px solid var(--gold)';
+    }
+  }
+});
+</script>
+</body>
+</html>

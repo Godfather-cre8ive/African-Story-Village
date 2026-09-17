@@ -1,0 +1,39 @@
+/* ==========================================================================
+   AFRICAN STORY VILLAGE — RESPONSIVE FINE-TUNING
+   Base mobile-first rules live inline in style.css/components.css.
+   This file layers additional breakpoint-specific refinements and
+   guards against horizontal overflow.
+   ========================================================================== */
+
+/* Never allow the page itself to scroll sideways; only carousel tracks may */
+html, body { max-width: 100%; overflow-x: hidden; }
+
+/* Small phones */
+@media (max-width: 380px) {
+  .container { padding-inline: var(--space-sm); }
+  .hero-copy .lede { font-size: 1rem; }
+  .btn { padding: 0.75em 1.3em; font-size: 0.95rem; }
+}
+
+/* Phones -> small tablets: give carousels a peek of the next card */
+@media (max-width: 640px) {
+  .carousel-track { padding-inline: var(--space-sm); scroll-padding-left: var(--space-sm); }
+  .grid-2, .grid-3 { gap: var(--space-md); }
+  .footer-grid { text-align: left; }
+  .hero-badge { display: none; }
+}
+
+/* Tablet */
+@media (min-width: 640px) and (max-width: 1023px) {
+  .nav-list { gap: var(--space-md); }
+}
+
+/* Large desktop refinements */
+@media (min-width: 1280px) {
+  .container { padding-inline: var(--space-lg); }
+}
+
+/* Print */
+@media print {
+  .site-header, .site-footer, .carousel-controls, .mobile-nav, .nav-overlay { display: none !important; }
+}
