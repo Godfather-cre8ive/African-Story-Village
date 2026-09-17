@@ -59,7 +59,7 @@ const ASV_DATA = {
       focus: ["Faith", "Courage", "Integrity", "Kindness", "Purpose"],
       image: "https://images.unsplash.com/photo-1490750967868-88aa4486c946?q=80&w=1200&auto=format&fit=crop"
     },
-    {
+    /*{
       id: "future",
       name: "Billy the Dandys",
       shortName: "Billy the Dandys",
@@ -70,7 +70,7 @@ const ASV_DATA = {
       focus: ["Observation", "Detail", "Teamwork"],
       image: "https://images.unsplash.com/photo-1503457574465-4a9773456a3d?q=80&w=1200&auto=format&fit=crop",
       comingSoon: true
-    }
+    }*/
   ],
 
   /* ------------------------------------------------------------------ */
