@@ -363,6 +363,13 @@ section { padding-block: var(--space-xl); }
   align-items: center;
   gap: 0.3em;
 }
+button.nav-link {
+  background: none;
+  border: none;
+  font-family: inherit;
+  font-size: inherit;
+  cursor: pointer;
+}
 .nav-link:hover, .nav-link[aria-current="page"] { color: var(--forest); }
 .nav-link .chev { width: 10px; height: 10px; transition: transform var(--transition-fast); }
 .has-dropdown[aria-expanded="true"] .chev { transform: rotate(180deg); }
